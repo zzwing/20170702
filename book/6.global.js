@@ -40,10 +40,14 @@ setImmediate(function(){
 //在开发的时候输出 我是谁，上线的时候输出 就是我
 // environment 俩个系统 mac window 可以区分开发环境
 // 设置环境变量 通过set a=b (注：a=b 不能加空格)设置 可以通过process。evn取出；
-console.log(process.env.NODE_ENV == 'dev');
+/*console.log(process.env.NODE_ENV == 'dev');
 if(process.env.NODE_ENV == 'dev'){
     console.log('我是谁');
 }else{
     console.log('就是我');
-
-}
+}*/
+//服务端 全局变量global 挂载在global上的属性 可以直接获取
+// var 声明的不会挂载在global上 为了解决模块化的问题；
+global.global.global.console.log(1);
+var  a = 1;
+console.log(global.a);
